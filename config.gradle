@@ -1,0 +1,147 @@
+ext {
+    isModule = false
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: "27.1.1",
+            minSdkVersion    : 16,
+            targetSdkVersion : 27,
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+
+    version = [
+            androidSupportSdkVersion: "27.1.1",
+            retrofitSdkVersion      : "2.4.0",
+            dagger2SdkVersion       : "2.19",
+            glideSdkVersion         : "4.8.0",
+            butterknifeSdkVersion   : "8.8.1",
+            rxlifecycleSdkVersion   : "1.0",
+            rxlifecycle2SdkVersion  : "2.2.2",
+            espressoSdkVersion      : "3.0.1",
+            fragmentationVersion    : "1.3.6",
+            canarySdkVersion        : "1.5.4",
+            sourceCompatibility     : "1.8",
+            targetCompatibility     : "1.8"
+    ]
+    supportLibrary = "27.1.1"
+    dependencies = [
+            //kotlin
+            "kotlin"                   : "org.jetbrains.kotlin:kotlin-stdlib-jre7:${version["kotlinVersion"]}",
+
+//            //support
+            "androidx-appcompat"       : "androidx.appcompat:appcompat:1.0.0",
+            "appcompat-v7"             : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
+            "design"                   : "com.android.support:design:${version["androidSupportSdkVersion"]}",
+            "support-v4"               : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
+            "cardview-v7"              : "com.android.support:cardview-v7:${version["androidSupportSdkVersion"]}",
+            "annotations"              : "com.android.support:support-annotations:${version["androidSupportSdkVersion"]}",
+            "recyclerview-v7"          : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
+
+            //network
+            "retrofit"                 : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
+            "retrofit-converter-gson"  : "com.squareup.retrofit2:converter-gson:${version["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava"  : "com.squareup.retrofit2:adapter-rxjava:${version["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava2" : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofitSdkVersion"]}",
+            "okhttp3"                  : "com.squareup.okhttp3:okhttp:3.11.0",
+            "okhttp-urlconnection"     : "com.squareup.okhttp:okhttp-urlconnection:2.0.0",
+            "glide"                    : "com.github.bumptech.glide:glide:${version["glideSdkVersion"]}",
+            "glide-compiler"           : "com.github.bumptech.glide:compiler:${version["glideSdkVersion"]}",
+            "glide-loader-okhttp3"     : "com.github.bumptech.glide:okhttp3-integration:${version["glideSdkVersion"]}",
+            "picasso"                  : "com.squareup.picasso:picasso:2.5.2",
+
+            //view
+            "butterknife"              : "com.jakewharton:butterknife:${version["butterknifeSdkVersion"]}",
+            "butterknife-compiler"     : "com.jakewharton:butterknife-compiler:${version["butterknifeSdkVersion"]}",
+            "pickerview"               : "com.contrarywind:Android-PickerView:3.2.5",
+            "photoview"                : "com.github.chrisbanes.photoview:library:1.2.3",
+            "numberprogressbar"        : "com.daimajia.numberprogressbar:library:1.2@aar",
+            "nineoldandroids"          : "com.nineoldandroids:library:2.4.0",
+            "paginate"                 : "com.github.markomilos:paginate:0.5.1",//?
+            "vlayout"                  : "com.alibaba.android:vlayout:1.1.0@aar",
+            "lottie"                   : "com.airbnb.android:lottie:2.7.0",
+            //屏幕适配
+            "autolayout"               : "com.zhy:autolayout:1.4.5",//hongyang大神的百分比适配方案
+            "autosize"                 : "me.jessyan:autosize:1.1.2",//升级版的屏幕适配方案，是根据今日头条的方案而演变的
+            "screenadaptation"
+                                       : "me.yatoooon:screenadaptation:1.1.1",//https://github.com/yatoooon/AndroidScreenAdaptation一个轻量好用的安卓开发屏幕适配工具库
+            //rx2
+            "rxandroid2"               : "io.reactivex.rxjava2:rxandroid:2.1.0",
+            "rxjava2"                  : "io.reactivex.rxjava2:rxjava:2.2.3",
+            "rxlifecycle2"             : "com.trello.rxlifecycle2:rxlifecycle:${version["rxlifecycle2SdkVersion"]}",
+            "rxlifecycle2-android"     : "com.trello.rxlifecycle2:rxlifecycle-android:${version["rxlifecycle2SdkVersion"]}",
+            "rxlifecycle2-components"  : "com.trello.rxlifecycle2:rxlifecycle-components:${version["rxlifecycle2SdkVersion"]}",
+            "rxcache2"                 : "com.github.VictorAlbertos.RxCache:runtime:1.8.3-2.x",
+            "rxpermissions2"           : "com.github.tbruyelle:rxpermissions:0.10.2",
+            "rxerrorhandler2"          : "me.jessyan:rxerrorhandler:2.1.1",
+
+            //tools
+            "dagger2"                  : "com.google.dagger:dagger:${version["dagger2SdkVersion"]}",
+            "dagger2-android"          : "com.google.dagger:dagger-android:${version["dagger2SdkVersion"]}",
+            "dagger2-android-support"  : "com.google.dagger:dagger-android-support:${version["dagger2SdkVersion"]}",
+            "dagger2-compiler"         : "com.google.dagger:dagger-compiler:${version["dagger2SdkVersion"]}",
+            "dagger2-android-processor": "com.google.dagger:dagger-android-processor:${version["dagger2SdkVersion"]}",
+            "androideventbus"          : "org.simple:androideventbus:1.0.5.1",
+            "eventbus"                 : "org.greenrobot:eventbus:3.1.1",
+            "otto"                     : "com.squareup:otto:1.3.8",
+            "gson"                     : "com.google.code.gson:gson:2.8.5",
+            "multidex"                 : "com.android.support:multidex:1.0.3",
+            "javax.annotation"         : "javax.annotation:jsr250-api:1.0",
+            "arouter"                  : "com.alibaba:arouter-api:1.4.1",
+            "arouter-compiler"         : "com.alibaba:arouter-compiler:1.2.2",
+            "progressmanager"          : "me.jessyan:progressmanager:1.5.0",
+            "retrofit-url-manager"     : "me.jessyan:retrofit-url-manager:1.4.0",
+            "lifecyclemodel"           : "me.jessyan:lifecyclemodel:1.0.1",
+
+            //test
+            "junit"                    : "junit:junit:4.12",
+            "androidJUnitRunner"       : "android.support.test.runner.AndroidJUnitRunner",
+            "runner"                   : "com.android.support.test:runner:1.0.1",
+            "espresso-core"            : "com.android.support.test.espresso:espresso-core:${version["espressoSdkVersion"]}",
+            "espresso-contrib"         : "com.android.support.test.espresso:espresso-contrib:${version["espressoSdkVersion"]}",
+            "espresso-intents"         : "com.android.support.test.espresso:espresso-intents:${version["espressoSdkVersion"]}",
+            "mockito-core"             : "org.mockito:mockito-core:1.+",
+            "timber"                   : "com.jakewharton.timber:timber:4.7.1",
+            "logger"                   : "com.orhanobut:logger:2.2.0",
+            "canary-debug"             : "com.squareup.leakcanary:leakcanary-android:${version["canarySdkVersion"]}",
+            "canary-release"           : "com.squareup.leakcanary:leakcanary-android-no-op:${version["canarySdkVersion"]}",
+            "umeng-analytics"          : "com.umeng.analytics:analytics:6.0.1",
+            "arouter-api"              : 'com.alibaba:arouter-api:1.3.1',//ARouter api
+            "arouter-compiler"         : 'com.alibaba:arouter-compiler:1.1.4',//ARouter
+//========================================================================================
+            //mqtt
+            "mqtt"                     : "org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0",
+            "mqtt-service"             : "org.eclipse.paho:org.eclipse.paho.android.service:1.1.1",
+
+            //tools
+            "RxKit"                    : "com.github.vondear.RxTool:RxKit:v2.2.7", //基础工具库
+            "RxUI"                     : "com.github.vondear.RxTool:RxUI:v2.2.7",//UI库
+            "RxCamera"                 : "com.github.vondear.RxTool:RxCamera:v2.2.7",//相机库
+            "RxFeature"                : "com.github.vondear.RxTool:RxFeature:v2.2.7",//功能库（Zxing扫描与生成二维码条形码 支付宝 微信）
+            "RxArcGisKit"              : "com.github.vondear.RxTool:RxArcGisKit:v2.2.7",//ArcGis For Android工具库（API：100.1以上版本）
+
+
+            "bugly"                    : "com.tencent.bugly:crashreport:latest.release",//崩溃日志收集
+            "sonic"                    : "com.tencent.sonic:sdk:3.0.0",//https://github.com/Tencent/VasSonic/tree/master/sonic-android
+//
+//            //View
+//            implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+            "constraint-layout"        : "com.android.support.constraint:constraint-layout:1.1.3",//约束布局
+            "materialdatetimepicker"   : "com.wdullaer:materialdatetimepicker:4.1.2",//时间选择器
+            "FlycoTabLayout_Lib"       : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",//指示器库
+            "bga-banner"               : "cn.bingoogolapple:bga-banner:2.1.7@aar",//广告轮播库
+            "material-dialogs"         : "com.afollestad.material-dialogs:core:0.9.6.0",//dialog库
+            "picture-selector"         : "com.github.LuckSiege.PictureSelector:picture_library:v2.2.3",//图片选择器
+            "flowlayout"               : "com.hyman:flowlayout-lib:1.1.2",//流失布局（hongyang）
+            "naphelper"                : "com.github.rubensousa:gravitysnaphelper:1.5",//滑动布局，用于动态详情页
+            "BridgeWebView"            : "com.github.open-android:BridgeWebView:v1.0",//https://github.com/open-android/BridgeWebView
+            "fragmentation"            : "me.yokeyword:fragmentation:${version["fragmentationVersion"]}",
+            "fragmentation-core"       : "me.yokeyword:fragmentation-core:${version["fragmentationVersion"]}",
+            "EasyRefreshLayout"        : "com.github.anzaizai:EasyRefreshLayout:1.3.1",
+            "base-recycler-adapter"    : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44",
+            "SuperCalendar"            : "com.github.MagicMashRoom:SuperCalendar:1.6",//https://github.com/MagicMashRoom/SuperCalendar
+            //green数据库
+            "greendao"                 : "org.greenrobot:greendao:3.2.2",
+            "greendao-generator"       : "org.greenrobot:greendao-generator:3.2.2",
+
+    ]
+}

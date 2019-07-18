@@ -1,0 +1,13 @@
+apply plugin: 'java'
+def v = rootProject.ext.version
+def dp = rootProject.ext.dependencies
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.auto.service:auto-service:1.0-rc2'
+    implementation 'com.squareup:javapoet:1.9.0'
+    implementation dp["rxjava2"]
+    implementation project(":lzb_router_annotation")
+}
+
+sourceCompatibility = v["sourceCompatibility"]
+targetCompatibility = v["targetCompatibility"]

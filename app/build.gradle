@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+def cx = rootProject.ext.android
+def dp = rootProject.ext.dependencies
+def v = rootProject.ext.version
+android {
+    compileSdkVersion cx.compileSdkVersion
+    defaultConfig {
+        applicationId "com.lzb.myapplication"
+        minSdkVersion cx["minSdkVersion"]
+        targetSdkVersion cx["targetSdkVersion"]
+        versionCode cx["versionCode"]
+        versionName cx["versionName"]
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+        compileOptions {
+            targetCompatibility v["targetCompatibility"]
+            sourceCompatibility v["sourceCompatibility"]
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation dp["junit"]
+    implementation dp["appcompat-v7"]
+    implementation dp["constraint-layout"]
+    implementation dp["recyclerview-v7"]
+//    implementation project(':LZB_DB')
+//    implementation project(':lzb_router_annotation')
+    annotationProcessor project(':lzb_router_apt')
+    implementation project(":lzb_base")
+    implementation project(":text")
+}
+

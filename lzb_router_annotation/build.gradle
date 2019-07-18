@@ -1,0 +1,8 @@
+apply plugin: 'java-library'
+def v = rootProject.ext.version
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = v["sourceCompatibility"]
+targetCompatibility = v["targetCompatibility"]
